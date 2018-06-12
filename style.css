@@ -1,0 +1,13 @@
+.clearfix::after{content: '';display: block;clear: both;}
+body {background-color: black; color:white; margin: 0; padding: 0;}
+a {color:inherit;text-decoration: none;}
+.topNavBar {padding:20px 16px;}
+.topNavBar > a {float: left;}
+.topNavBar > nav {float: right; padding-top:7px;}
+.topNavBar > nav > ul {list-style: none; margin: 0; padding: 0;}
+.topNavBar > nav > ul > li {float: left; margin: 0 17px;}
+.topNavBar > nav > ul > li > a {display: block; color: #B7B7B7;font-size: 12px;border-top: 3px solid transparent;border-bottom: 3px solid transparent;font-weight: bold;padding:5px 0;}
+.topNavBar > nav > ul > li > a:hover {border-bottom: 3px solid #e06567;}
+.topNavBar  .logo {font-size: 24px; font-family:  "Arial Black"; font-weight: bold;padding-top: 3px; padding-bottom: 4px;}
+.topNavBar  .logo .rs {margin-right: 4px; color:#e6686a;}
+.topNavBar  .logo .card {color: #9a9da2;}
