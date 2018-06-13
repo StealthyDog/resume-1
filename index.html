@@ -3,7 +3,7 @@
     <head>
         <title>我的简历</title>
         <link rel="stylesheet" href="./a.css">
-        <script src="//at.alicdn.com/t/font_705382_i5wduvtulj.js"></script>
+        <script src="//at.alicdn.com/t/font_705382_27gzvnhttlu.js"></script>
     </head>
     <body>
         <div class="topNavBar">
@@ -45,6 +45,8 @@
                     <dd>304172871@qq.com</dd>
                     <dt>手机号</dt>
                     <dd>13015930750</dd>
+                    <dt>兴趣爱好</dt>
+                    <dd>吉他、唱歌、篮球</dd>
                 </dl>
             </div>
             </div>    
@@ -66,34 +68,73 @@
                     </svg></a>
                 </footer>
             </div>
-            <a class="button" href="#">下载pdf简历</a>
-            <p>这里是一段类似自我介绍的话。<br>
-                自我介绍待编辑。。。
+            <p class="download-wrapper"><a class="download" href="#">下载 pdf 简历</a></p>
+            <p class="selfIntrodution">性格活泼开朗，是个有趣的人儿~4年的工作生涯，培养了我的学习能力，让我有了一个多元化的成长。<br>乐于分享，善于总结，吾日三省吾身：高吗富吗帅吗？没有就努力工作吧。<br>爱玩创新，喜欢钻研，一腔热血仍未洒尽。
             </p>
         </main>
-        <section>
+        <section class="skills">
             <h2>技能</h2>
-            <ol>
-                <li>HTML5 &apm; CSS3</li>
-                <li>JavaScript</li>
-                <li>jQuery</li>
-                <li>Vue</li>
-                <li>React</li>
-                <li>HTTP</li>
+            <ol class="clearfix">
+                <li><h3>HTML5 & CSS3</h3>
+                    <div class="progressBar">
+                        <div class="progress"></div>
+                    </div>
+                </li>
+                <li><h3>JavaScript</h3>
+                    <div class="progressBar">
+                        <div class="progress"></div>
+                    </div>
+                </li>
+                <li><h3>jQuery</h3>
+                    <div class="progressBar">
+                        <div class="progress"></div>
+                    </div>
+                </li>
+                <li><h3>Vue.js</h3>
+                    <div class="progressBar">
+                        <div class="progress"></div>
+                    </div>
+                </li>
+                <li><h3>React.js</h3>
+                    <div class="progressBar">
+                        <div class="progress"></div>
+                    </div>
+                </li>
+                <li><h3>Node.js</h3>
+                    <div class="progressBar">
+                        <div class="progress"></div>
+                    </div>
+                </li>
             </ol>
         </section>
-        <section>
+        <section class="works">
             <h2>作品集合</h2>
             <nav>
-                <li>所有</li>
-                <li>框架</li>
-                <li>原生JS&apm;CSS</li>
+                <ol class="clearfix">
+                    <li id="works1">所有</li>
+                    <li id="works2">框架</li>
+                    <li id="works3">原生JS&CSS</li>
+                </ol>
+                <div id="worksBar" class="bar state-1">
+                    <div class="bar-inner"></div>
+                </div>
             </nav>
+            <script>
+                works1.onclick= function (){
+                    worksBar.className = 'bar state-1';
+                }
+                works2.onclick= function (){
+                    worksBar.className = 'bar state-2';
+                }
+                works3.onclick= function (){
+                    worksBar.className = 'bar state-3';
+                }
+            </script>
+            <div class="jobs">
+                <div class="big"><img src="./images/1.jpg" alt="作品1"></div>
+                <div class="small1"><img src="./images/2.jpg" alt="作品2"></div>
+                <div class="small2"><img src="./images/3.jpg" alt="作品3"></div>
+            </div>
         </section>
-        <div class="jobs">
-            <div class="big"></div>
-            <div class="small"></div>
-            <div class="small"></div>
-        </div>
     </body>
 </html>
