@@ -2,10 +2,18 @@
 <html>
     <head>
         <title>我的简历</title>
-        <link rel="stylesheet" href="./a.css">
+        <link rel="stylesheet" href="./main.css">
+        <link rel="stylesheet" href="./loading.css">
         <script src="//at.alicdn.com/t/font_705382_27gzvnhttlu.js"></script>
+        <style>
+            .site-welcome {display:none; position:fixed; top:0;left:0;width:100%;height:100%; background:#888; z-index:10; justify-content:center; align-items:center; }
+            .site-welcome.active {display:flex; }
+        </style>
     </head>
     <body>
+        <div id="siteWelcome" class="site-welcome active">
+            <div class="loading"></div> 
+        </div>
         <div class="topNavBar">
             <div class="topNavBar-inner  clearfix">
                  <a class="logo" href="#">
@@ -136,5 +144,9 @@
                 <div class="small2"><img src="./images/3.jpg" alt="作品3"></div>
             </div>
         </section>
+        <script>setTimeout(function(){
+            siteWelcome.classList.remove('active')
+        },1000)
+        </script>
     </body>
 </html>
