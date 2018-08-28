@@ -14,20 +14,34 @@
         <div id="siteWelcome" class="site-welcome active">
             <div class="loading"></div> 
         </div>
-        <div class="topNavBar">
+        <div id="topNavBar" class="topNavBar">
             <div class="topNavBar-inner  clearfix">
                  <a class="logo" href="#">
                     <span class="rs">YHW</span><span class="card">card</span>
                 </a>
-                <nav>
+                <nav class="menu">
                   <ul class="clearfix ">
-                     <li><a href="">关于</a></li>
-                     <li><a href="">技能</a></li>
-                     <li><a href="">作品</a></li>
-                     <li><a href="">博客</a></li>
-                     <li><a href="">日历</a></li>
-                       <li><a href="">联系方式</a></li>
-                       <li><a href="">其他</a></li>
+                     <li><a href="#siteAbout">关于</a></li>
+                     <li><a href="#siteSkill">技能</a></li>
+                     <li>
+                        <a href="#siteWorks">作品</a>
+                        <ul class="submenu">
+                            <li><a href="">作品1</a></li>
+                            <li><a href="">作品2</a></li>
+                            <li><a href="">作品3</a></li>
+                        </ul>
+                     </li>
+                     <li>
+                        <a href="#siteBlogs">博客</a>
+                        <ul class="submenu">
+                            <li><a href="">博客1</a></li>
+                            <li><a href="">博客2</a></li>
+                            <li><a href="">博客3</a></li>
+                        </ul>
+                    </li>
+                     <li><a href="#siteDate">日历</a></li>
+                     <li><a href="#siteTel">联系方式</a></li>
+                     <li><a href="#siteOther">其他</a></li>
                   </ul>
                  </nav>
             </div>  
@@ -36,7 +50,7 @@
             <div class="mask"></div>
         </div>
         <main>
-            <div class="usercard">
+            <div id="siteAbout" class="usercard">
                 <div class="picAndTxt clearfix">
             <div class="picture"><img src="./images/avatar.jpg" width="299" height="347" alt="头像"></div>
             <div class="text">
@@ -80,7 +94,7 @@
             <p class="selfIntrodution">性格活泼开朗，是个有趣的人儿~4年的工作生涯，培养了我的学习能力，让我有了一个多元化的成长。<br>乐于分享，善于总结，吾日三省吾身：高吗富吗帅吗？没有就努力工作吧。<br>爱玩创新，喜欢钻研，一腔热血仍未洒尽。
             </p>
         </main>
-        <section class="skills">
+        <section class="skills" id="siteSkill">
             <h2>技能</h2>
             <ol class="clearfix">
                 <li><h3>HTML5 & CSS3</h3>
@@ -115,7 +129,7 @@
                 </li>
             </ol>
         </section>
-        <section class="works">
+        <section class="works" id="siteWorks">
             <h2>作品集合</h2>
             <nav>
                 <ol class="clearfix">
@@ -147,6 +161,35 @@
         <script>setTimeout(function(){
             siteWelcome.classList.remove('active')
         },2000)
+        window.onscroll = function(){
+            if(window.scrollY>0){
+                topNavBar.classList.add('sticky')
+            }else{
+                topNavBar.classList.remove('sticky')
+            }
+        }
+
+        let liTags = document.querySelectorAll('nav.menu > ul > li')
+        for(let i=0; i<liTags.length; i++){
+            liTags[i].onmouseenter = function (x){
+                x.currentTarget.classList.add('active')
+            }
+            liTags[i].onmouseleave = function (x){
+                x.currentTarget.classList.remove('active')
+            }
+        }
+
+        let aTags = document.querySelectorAll('nav.menu > ul > li > a')
+        for(let i=0; i<aTags.length; i++){
+            aTags[i].onclick = function(x){
+                x.preventDefault();
+                let a = x.currentTarget
+                let href = a.getAttribute('href')
+                let element = document.querySelector(href)
+                let top = element.offsetTop
+                window.scrollTo(0, top - 80)
+            }
+        }
         </script>
     </body>
 </html>
